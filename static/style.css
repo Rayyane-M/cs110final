@@ -1,0 +1,86 @@
+/* General */
+body {
+    font-family: "Helvetica", Arial, sans-serif; /* General font */
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Spotify black */
+    color: #ffffff; /* White text */
+}
+
+/* Header */
+h1, h2 {
+    color: #1DB954; /* Spotify green */
+    text-align: center;
+    font-weight: bold; /* Bold titles */
+}
+
+/* Playlist and Tracks Lists */
+ul {
+    list-style-type: none; /* Remove dots */
+    padding: 0;
+}
+
+li {
+    margin: 15px 0;
+    text-align: center;
+    font-size: 1.2em;
+    background: transparent; /* Clear background by default */
+    padding: 10px;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Hover Effect for List Item Box */
+li:hover {
+    transform: scale(1.05); /* Slight enlargement */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Faint gray drop shadow on box */
+}
+
+/* Text Colors */
+a.selected {
+    color: #1DB954; /* Regular Spotify green */
+    font-weight: bold; /* Selected text bold */
+    text-decoration: none;
+}
+
+a.unselected {
+    color: rgba(29, 185, 84, 0.7); /* Light Spotify green */
+    font-weight: normal; /* Regular weight for unselected text */
+    text-decoration: none;
+}
+
+/* Hover Effect for Links */
+a:hover {
+    color: #1DB954; /* Brighten text */
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Faint gray drop shadow on text */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Top Bar for Explanation */
+.explanation-bar {
+    background-color: #1DB954; /* Spotify green */
+    color: #121212; /* Black text */
+    padding: 10px;
+    text-align: center;
+    font-weight: bold; /* Bold for explanation bar */
+    margin-bottom: 20px;
+}
+
+/* Charts */
+img {
+    display: block;
+    margin: 20px auto;
+    border: 2px solid #1DB954; /* Spotify green border */
+    border-radius: 10px;
+    max-width: 90%;
+}
+
+/* Separator Bar */
+.separator-bar {
+    width: 90%; /* Adjust to fit the content area */
+    height: 4px; /* Thin bar */
+    background: linear-gradient(90deg, #1DB954, #121212); /* Gradient from Spotify green to black */
+    margin: 20px auto; /* Center the bar and add spacing */
+    border-radius: 2px; /* Slight rounding for a smoother look */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}

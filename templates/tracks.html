@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Tracks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Playlist Analysis</h1>
+
+    <div class="explanation-bar">
+        <h2>Popularity Distribution</h2>
+        <ul>
+            <li>
+                X-axis represents all of the tracks in the playlist
+                <em>(limited to 100 songs due to the readability of the bar chart)</em>.
+            </li>
+            <li>
+                Y-axis represents the popularity of the songs:
+                <ul>
+                    <li>Popularity score close to 100 indicates a song is extremely popular and 
+                        popularity score close to 0 indicates low popularity of the song.</li>
+                </ul>
+            </li>
+            <li>
+                Purpose:
+                <ul>
+                    <li>This chart provides insights into how well-known each track is.</li>
+                    <li>It can help identify standout tracks that might resonate more with listeners or suggest tracks to explore further.</li>
+                </ul>
+            </li>
+        </ul>
+        
+    </div>
+    <img src="{{ url_for('static', filename=popularity_chart)}}" alt="Popularity Chart">
+
+
+    <div class="explanation-bar">
+        <h2>Track Length Distribution</h2>
+        <ul>
+            <li>
+                X-axis represents all of the tracks in the playlist
+                <em>(limited to 100 songs due to the readability of the bar chart)</em>.
+            </li>
+            <li>
+                Y-axis represents the track length <em>(in minutes)</em>
+            </li>
+            <li>Purpose
+                <ul>
+                    <li>Useful for understanding the playlist leans towards short, punchy tracks or longer, immersive ones.</li>
+                </ul>
+            </li>
+        </ul>
+        
+    </div>
+    <img src="{{ url_for('static', filename=length_chart)}}" alt="Track Length Chart">
+
+    <div class="explanation-bar">
+        <h2>Genre Breakdown</h2>
+        <ul>
+            <li> Data Represented:
+                <ul>
+                    <list>Slices: Different genres represented in the playlist</list>
+                    <list>Slice Size: The number of tracks belonging to each genre <em>(Represented as percentages)</em></list>
+                </ul>
+            </li>
+            <li> Purpose:
+                <ul>
+                    <list> Provides an overview of the playlist's musical diversity.</list>
+                    <list> Helps indentify whether the playlist is dominated by one genre or includes a mix of various genres. </list>
+                </ul>
+            </li>
+        </ul>
+        
+    </div>
+    <img src="{{ url_for('static', filename=genres_chart) }}" alt="Genre Breakdown Chart">
+    
+    <div class="separator-bar"></div>
+    
+    <h1>Playlist Tracks</h1>
+    <ul>
+        {% for track in tracks %}
+        <li>
+            <strong>{{ track.name }}</strong> by {{ track.artist }}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('get_playlists') }}">Back to Playlists</a>
+</body>
+</html>
